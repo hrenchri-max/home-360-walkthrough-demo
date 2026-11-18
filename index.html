@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Hillcrest House · 360° walk-through</title>
+<meta name="description" content="Walk through Hillcrest House in 360°. Drag to look around, tap a ring to move into the next room.">
+<meta name="theme-color" content="#0b0c0e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230b0c0e%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%228%22 fill=%22none%22 stroke=%22%23f1c789%22 stroke-width=%223%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<canvas id="view" aria-label="360 degree view of the room. Drag to look around."></canvas>
+<div class="scrim top"></div>
+<div class="scrim bottom"></div>
+
+<header class="room">
+  <div class="eyebrow">Hillcrest House</div>
+  <h1 id="roomName">Living room</h1>
+  <div class="meta"><span id="roomIdx">1 of 3</span><span class="dot">·</span><span>360° walk-through</span></div>
+</header>
+
+<div class="tools">
+  <button id="btnGyro" class="icon" hidden aria-label="Look around by moving your phone" title="Motion look">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M3 9c-1.3 2-1.3 4 0 6M21 9c1.3 2 1.3 4 0 6"/></svg>
+  </button>
+  <button id="btnFull" class="icon" aria-label="Full screen" title="Full screen">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+  </button>
+</div>
+
+<div id="hotspots"></div>
+
+<aside class="map" aria-label="Floor plan">
+  <div class="map-head">Floor plan</div>
+  <svg id="plan" role="img" aria-label="Floor plan with your position"></svg>
+</aside>
+
+<div class="mode" role="group" aria-label="Transition style">
+  <span class="mode-label">Transition</span>
+  <div class="seg">
+    <button data-mode="sphere" class="on" title="Panorama on a sphere">Sphere</button>
+    <button data-mode="proxy" title="Panorama projected onto a room box, so walls and floor shift with parallax while you move">Room depth</button>
+  </div>
+</div>
+
+<div class="hint" id="hint">Drag to look around · Tap a ring to walk through</div>
+
+<footer class="credit">Panoramas: <a href="https://polyhaven.com" target="_blank" rel="noopener">Poly Haven</a>, CC0</footer>
+
+<div id="loader">
+  <div class="ld-title">Hillcrest House</div>
+  <div class="ld-sub">Loading the walk-through</div>
+  <div class="ld-bar"><i></i></div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
