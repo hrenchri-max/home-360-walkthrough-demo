@@ -6,7 +6,7 @@ import * as THREE from 'three';
 const DEG = Math.PI / 180;
 const ROOMS = {
   living:  { name: 'Living room',      src: 'pano/living.jpg',  rot: 127.8, plan: [0, 0],        size: [5.0, 4.2], floor: -1.5,  box: [5.0, 4.0, 1.3] },
-  kitchen: { name: 'Kitchen & dining', src: 'pano/kitchen.jpg', rot: 115.2, plan: [6, 0],        size: [4.4, 4.0], floor: -1.45, box: [3.8, 3.4, 1.5] },
+  kitchen: { name: 'Guest room', src: 'pano/kitchen.jpg', rot: 115.2, plan: [6, 0],        size: [4.4, 4.0], floor: -1.45, box: [3.8, 3.4, 1.5] },
   bedroom: { name: 'Bedroom suite',    src: 'pano/bedroom.jpg', rot: -61.2, plan: [6.57, -5.97], size: [4.4, 3.8], floor: -1.45, box: [3.4, 3.0, 1.25] },
 };
 const ORDER = ['living', 'kitchen', 'bedroom'];
